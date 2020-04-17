@@ -1,7 +1,7 @@
 // added line for package
 package app;
 
- class MyLinkedList<E> extends MyAbstractList <E>{
+class MyLinkedList<E> extends MyAbstractList<E> {
        
     // ////////  this should be first!!!!
     private static class Node<E> {
@@ -195,26 +195,25 @@ package app;
         // variables
         boolean _found = false;
 
-        // set the list to the beginning
+        // set list to the beginning
         Node<E> current = head;
 
-        // loop the list
-        while (current.element != e) {
+        // loop until end of list
+        while (current != null) {
 
-            if (current.next == null) { 
-                // end of list nothing found
-                _found =  false; 
-            }
-            else { 
+            if (current.element.equals(e)) {
                 // found it
                 _found = true;
-                // force exit no need to keep searching
-                break;
-             }
+                break; // bounce out
+            } // end if
 
-        }
+            // advance the list
+            current = current.next;
+
+        } // end while
         
         return _found;
+        
     } // end contains
     
     /**
@@ -235,7 +234,29 @@ package app;
      * @param index index if item to find
      * @return value at specified index, return null if index is invalid
      */
-    public E get(int index) { return null; } // end get
+    public E get(int index) { 
+
+        // varialbes
+        int count = 0;
+
+        // repostion linked list at head
+        Node<E> current = head;
+
+        // loop the list
+        while (current != null) {
+
+            // do we have a match
+            if(count == index) { return (current.element); } // end if
+
+            count ++; // increment counter
+
+            current = current.next; // advance the list
+
+        } // end while
+
+        return null;
+
+    } // end get
     
     /**
      * 
