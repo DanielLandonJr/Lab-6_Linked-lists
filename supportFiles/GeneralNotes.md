@@ -35,7 +35,7 @@ html tags
      * <p><strong><em>Post-Conditions: </em></strong>Post-Conditions</p>
      * 
      * <p><strong><em>Author: </em></strong>Daniel C. Landon Jr.</p>
-     * <p><strong><em>Start Date: </em></strong>Due Date</p>
+     * <p><strong><em>Start Date: </em></strong>Start Date</p>
      *
      */
 
