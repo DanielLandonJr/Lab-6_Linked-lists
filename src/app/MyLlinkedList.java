@@ -196,24 +196,24 @@ class MyLinkedList<E> extends MyAbstractList<E> {
         boolean _found = false;
 
         // set list to the beginning
-        Node<E> current = head;
+        Node<E> _current = head;
 
         // loop until end of list
-        while (current != null) {
+        while (_current != null) {
 
-            if (current.element.equals(e)) {
+            if (_current.element.equals(e)) {
                 // found it
                 _found = true;
                 break; // bounce out
             } // end if
 
             // advance the list
-            current = current.next;
+            _current = _current.next;
 
         } // end while
         
         return _found;
-        
+
     } // end contains
     
     /**
@@ -237,20 +237,20 @@ class MyLinkedList<E> extends MyAbstractList<E> {
     public E get(int index) { 
 
         // varialbes
-        int count = 0;
+        int _count = 0;
 
         // repostion linked list at head
-        Node<E> current = head;
+        Node<E> _current = head;
 
         // loop the list
-        while (current != null) {
+        while (_current != null) {
 
             // do we have a match
-            if(count == index) { return (current.element); } // end if
+            if(_count == index) { return (_current.element); } // end if
 
-            count ++; // increment counter
+            _count ++; // increment counter
 
-            current = current.next; // advance the list
+            _current = _current.next; // advance the list
 
         } // end while
 
@@ -307,7 +307,31 @@ class MyLinkedList<E> extends MyAbstractList<E> {
      * @param e item to search for in list
      * @return index of last matching element, -1 if no match
      */
-    public int lastIndexOf(E e) { return -1; } // end lastIndexOf
+    public int lastIndexOf(E e) {
+
+        // varialbes
+        int _index = -1;
+        int _count = 0;
+
+        // reset list to head
+        Node<E> _current = head;
+
+        //loop the list
+        while(_current != null) {
+
+            // do we have a match
+            // instead of breaking out of the loop we let it keep running just in case there is another element with the matching value
+            if(_current.element.equals(e)) { _index = _count; } // end if
+
+            _count ++; // increment counter
+
+            _current = _current.next; // advance the list
+
+        } // end while
+        
+        return _index;
+
+    } // end lastIndexOf
     
     /**
      * 
