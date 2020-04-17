@@ -237,7 +237,7 @@ class MyLinkedList<E> extends MyAbstractList<E> {
     public E get(int index) { 
 
         // varialbes
-        int _count = 0;
+        int _counter = 0;
 
         // repostion linked list at head
         Node<E> _current = head;
@@ -246,14 +246,15 @@ class MyLinkedList<E> extends MyAbstractList<E> {
         while (_current != null) {
 
             // do we have a match
-            if(_count == index) { return (_current.element); } // end if
+            if(_counter == index) { return (_current.element); } // end if
 
-            _count ++; // increment counter
+            _counter ++; // increment counter
 
             _current = _current.next; // advance the list
 
         } // end while
 
+        // if we get here the assumption is the index is invalid
         return null;
 
     } // end get
@@ -311,7 +312,7 @@ class MyLinkedList<E> extends MyAbstractList<E> {
 
         // varialbes
         int _index = -1;
-        int _count = 0;
+        int _counter = 0;
 
         // reset list to head
         Node<E> _current = head;
@@ -321,9 +322,9 @@ class MyLinkedList<E> extends MyAbstractList<E> {
 
             // do we have a match
             // instead of breaking out of the loop we let it keep running just in case there is another element with the matching value
-            if(_current.element.equals(e)) { _index = _count; } // end if
+            if(_current.element.equals(e)) { _index = _counter; } // end if
 
-            _count ++; // increment counter
+            _counter ++; // increment counter
 
             _current = _current.next; // advance the list
 
@@ -351,7 +352,38 @@ class MyLinkedList<E> extends MyAbstractList<E> {
      * @param e new value for above index
      * @return old value that was replace otherwise returns -1 if index is invalid
      */
-    public E set(int index, E e) { return null; } // end set
+    public E set(int index, E e) {
+
+        // varialbes
+        int _counter = 0;
+        E _oldValue = null;
+
+        // repostion linked list at head
+        Node<E> _current = head;
+
+        // loop the list
+        while (_current != null) {
+
+            // do we have a match
+            if(_counter == index) { 
+
+                _oldValue = _current.element;
+
+                _current.element = e;
+
+                return _oldValue; 
+            } // end if
+
+            _counter ++; // increment counter
+
+            _current = _current.next; // advance the list
+
+        } // end while
+
+        // if we get here the assumption is the index is invalid
+        return null;
+
+    } // end set
     
     
     
