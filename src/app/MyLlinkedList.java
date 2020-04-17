@@ -1,4 +1,4 @@
-// added line for pacakge so the damn thing will work
+// added line for package
 package app;
 
  class MyLinkedList<E> extends MyAbstractList <E>{
@@ -190,7 +190,32 @@ package app;
      * @param e item to check against the list
      * @return true if item is in the list, false if item is not in list
      */
-    public boolean contains(E e) { return false; } // end contains
+    public boolean contains(E e) {
+
+        // variables
+        boolean _found = false;
+
+        // set the list to the beginning
+        Node<E> current = head;
+
+        // loop the list
+        while (current.element != e) {
+
+            if (current.next == null) { 
+                // end of list nothing found
+                _found =  false; 
+            }
+            else { 
+                // found it
+                _found = true;
+                // force exit no need to keep searching
+                break;
+             }
+
+        }
+        
+        return _found;
+    } // end contains
     
     /**
      * 

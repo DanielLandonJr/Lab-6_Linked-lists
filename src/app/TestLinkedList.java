@@ -1,4 +1,4 @@
-// added line for pacakge so the damn thing will work
+// added line for package
 package app;
 
 public class TestLinkedList {
@@ -43,6 +43,17 @@ public class TestLinkedList {
     System.out.println("(10) " + list);
 
     /* Below is the code to test methods that should be implemented in Lab 8*/
+
+
+    // added by me so that I can see where my changes are taking place for project
+
+    System.out.println();
+    System.out.println();
+    System.out.println("The following is for Lab 6");
+    System.out.println();
+    System.out.println();
+
+
     String s = "Germany";
     if (list.contains(s))
         System.out.println("(11) The list contains " + s);
@@ -59,7 +70,7 @@ public class TestLinkedList {
     s = "France";
     pos = list.indexOf(s);
     if (pos != -1)
-        System.out.println("(13) The list element " + s + "is at position " + pos);
+        System.out.println("(13) The list element " + s + " is at position " + pos);
     else
         System.out.println("(13) The list does not contain " + s);
 
